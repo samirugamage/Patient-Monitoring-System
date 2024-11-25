@@ -1,0 +1,17 @@
+#Ensure you have these libraries installed in your Arduino IDE before uploading the firmware.
+#WiFi
+
+    Pre-installed with the ESP32 board support package in the Arduino IDE.
+    Provides Wi-Fi connectivity for the ESP32.
+
+#HTTPClient
+
+    Pre-installed with the ESP32 board support package.
+    Enables the ESP32 to send HTTP requests (e.g., POST requests to the server).
+
+#MPU9250_asukiaaa
+
+    Used to interface with the MPU9250 sensor (gyroscope and accelerometer).
+    Installable via the Arduino Library Manager:
+        Go to Sketch > Include Library > Manage Libraries....
+        Search for MPU9250_asukiaaa and install it.
