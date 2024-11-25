@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In - Patient Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="signin-container">
+        <form id="loginForm" class="signin-form">
+            <h2>Sign In</h2>
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Sign In</button>
+            <p>Don’t have an account? <a href="#">Register here</a>.</p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if(username === 'admin' && password === 'admin') {
+                // Redirect to the dashboard page
+                window.location.href = 'dashboard.html'; // Ensure you have this dashboard page
+            } else {
+                alert('Invalid credentials!');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Dashboard</title>
+  <!-- Include Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Include Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-ksm0c1wGKkx3NVd3XPNqaodJ5zy+bZTpq6+XfYPrg3Icf/dQo0RRUP8oCjH/NwzQ" crossorigin="anonymous">
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <h1 class="nav-header"><i class="fas fa-user-heart"></i> Patient Dashboard</h1>
+  </div>
+
+  <div class="container">
+    <!-- <h1><i class="fas fa-user-heart"></i> Patient Dashboard</h1> -->
+    <div id="notification">⚠️ <strong>Alert:</strong> Patient has fallen down!</div>
+
+    <h2 style="text-align:center; margin-top:50px;">Patient Details</h2>
+    <div class="data-grid">
+      <div class="card">
+        <i class="fas fa-walking"></i>
+        <h3><span id="stepCount">0</span></h3>
+        <p>Step Count</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-route"></i>
+        <h3><span id="distance">0</span> m</h3>
+        <p>Distance Travelled</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-fire-alt"></i>
+        <h3><span id="caloriesBurned">0</span> kcal</h3>
+        <p>Calories Burned</p>
+      </div>
+    </div>
+
+    <h2 style="text-align:center; margin-top:50px;">Raw Sensor Readings</h2>
+    <div class="data-grid">
+      <div class="card">
+        <i class="fas fa-ruler-horizontal"></i>
+        <h3><span id="accelX">0</span> m/s²</h3>
+        <p>Acceleration X</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-ruler-vertical"></i>
+        <h3><span id="accelY">0</span> m/s²</h3>
+        <p>Acceleration Y</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-arrows-alt"></i>
+        <h3><span id="accelZ">0</span> m/s²</h3>
+        <p>Acceleration Z</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-sync-alt"></i>
+        <h3><span id="gyroX">0</span> °/s</h3>
+        <p>Gyro X</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-sync"></i>
+        <h3><span id="gyroY">0</span> °/s</h3>
+        <p>Gyro Y</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-redo-alt"></i>
+        <h3><span id="gyroZ">0</span> °/s</h3>
+        <p>Gyro Z</p>
+      </div>
+    </div>
+
+    <h2 style="text-align:center; margin-top:50px;">Sensor Data Graphs</h2>
+    <div class="chart-grid">
+      <div class="card chart-container">
+        <h3>Gyroscope Data</h3>
+        <div class="chart-wrapper">
+          <canvas id="gyroChart"></canvas>
+        </div>
+      </div>
+      <div class="card chart-container">
+        <h3>Accelerometer Data</h3>
+        <div class="chart-wrapper">
+          <canvas id="accelChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="chartModal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <canvas id="modalChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Audio element for the chime sound -->
+  <audio id="chime" src="chime.mp3"></audio>
+
+  <!-- JavaScript Section -->
+  <script src="scripts.js"></script>
+</body>
+</html>
