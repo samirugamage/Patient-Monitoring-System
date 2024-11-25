@@ -12,8 +12,6 @@ This project demonstrates a wearable IoT device built using the ESP32-C3, design
 - **Fall Detection**: Alerts responsible parties upon detecting sharp accelerations.
 - **Web Dashboard**: Real-time visualization of step counts and fall notifications.
 - **Customizable Firmware**: Easily configurable using the Arduino IDE.
-- **Optional**: Classify movements (walking, jogging, running) using machine learning.
-
 ---
 
 ## Hardware Requirements
